@@ -11,8 +11,8 @@
 	<name>Datapine Test Application</name>
 
 	<properties>
-		<java.version>1.6</java.version>
-		<org.springframework-version>3.1.2.RELEASE</org.springframework-version>
+		<java.version>1.8</java.version>
+		<org.springframework-version>4.1.0.RELEASE</org.springframework-version><!--3.1.2.RELEASE-->
 		<org.aspectj-version>1.7.0</org.aspectj-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
 		<org.hibernate-version>3.5.6-Final</org.hibernate-version>
@@ -143,8 +143,8 @@
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -174,12 +174,13 @@
 			<artifactId>asm</artifactId>
 			<version>3.1</version>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-asm</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-
+		 -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
@@ -226,9 +227,12 @@
 				</configuration>
 			</plugin>
 			<plugin>
+<!-- <groupId>org.mortbay.jetty</groupId>
+    <artifactId>jetty-maven-plugin</artifactId>
+    <version>8.1.16.v20140903</version> -->			
 				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>6.1.26</version>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.16.v20140903</version>
 			</plugin>
 		</plugins>
 	</build>

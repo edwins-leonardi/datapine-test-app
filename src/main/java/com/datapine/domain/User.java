@@ -10,13 +10,14 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Long id;
-
 	private String email;
-
 	private String password;
 
 	public User(final String email) {
 		this.email = email;
+	}
+
+	public User() {
 	}
 
 	public Long getId() {
@@ -35,4 +36,11 @@ public class User {
 		return password;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 }

@@ -7,16 +7,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Datapine login</title>
+<title>Datapine - Add User</title>
 </head>
 <body>
 
-<form:form action="${spring:mvcUrl('LoginController#login').build()}">
-	Name: <input name="email" type="text" />
+<form:form action="${spring:mvcUrl('UserController#updateUser').build()}" method="POST" >
+	<input type="hidden" name="_METHOD" value="PUT"/>
+	Name: <input name="email" type="text" value="${user.email}" />
 	<br />
-	Password: <input name="password" type="password" />
+	Password: <input name="password" type="password" value="${user.password}"/>
 	<br />
-	<input type="submit" value="Login" />
+	<input type="submit" value="Save" />
 </form:form>
 
 </body>
