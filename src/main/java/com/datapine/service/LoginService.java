@@ -1,11 +1,15 @@
 package com.datapine.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
 public class LoginService {
 
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
 	public void login(String email, String password) {
-		System.out.println(email + " loggin attempt");
+		logger.info(email + " loggin attempt");
 	}
 }

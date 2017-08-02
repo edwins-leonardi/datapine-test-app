@@ -4,16 +4,25 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Aspect
 public class LoginInterceptor {
-	@Pointcut("execution(* com.datapine.service.LoginService.login(..))")
+
+	private Logger logger = LoggerFactory.getLogger(getClass());
+
+	public LoginInterceptor() {
+		logger.info("here i am");
+	}
+
+	@Pointcut("execution(* com.datapine.security.CustomAuthenticationManager.authenticate(..))")
 	public void k() {
 	}
 
 	@Before("k()")
 	public void myadvice(JoinPoint jp) {
 		Object[] args = jp.getArgs();
-		System.out.println("logging attempt made for " + args[0]);
+		logger.info("logging attempt made for " + args[0]);
 	}
 }

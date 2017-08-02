@@ -10,9 +10,10 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 	
 	<context:component-scan base-package="com.datapine.service,com.datapine.dao,com.datapine.aspect"/>
-	
+
+<!-- 	
 	<aop:aspectj-autoproxy/> 
 	
 	<bean id="myAspect" class="com.datapine.aspect.LoginInterceptor"/>
-	
+	 -->
 </beans>
