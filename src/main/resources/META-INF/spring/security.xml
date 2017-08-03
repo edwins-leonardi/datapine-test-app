@@ -9,26 +9,20 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 						
 	
-	<context:component-scan base-package="com.datapine.aspect"/>
-	
 	<http />
-
+	
+	<!-- 
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider ref="myAuthenticationProvider" />
 	</authentication-manager>
+	 -->
 	
-	
-	<!-- Bean implementing AuthenticationProvider of Spring Security -->
+	<!-- Bean implementing AuthenticationProvider of Spring Security 
 	<b:bean id="myAuthenticationProvider" class="com.datapine.security.CustomAuthenticationManager"/>
-
+	-->
 	<user-service>
 		<user name="user" password="password" authorities="ROLE_USER" />
 
 	</user-service>
 	
-	<aop:aspectj-autoproxy/> 
-	
-	<b:bean id="myAspect" class="com.datapine.aspect.LoginInterceptor"/>
-	
-
 </b:beans>

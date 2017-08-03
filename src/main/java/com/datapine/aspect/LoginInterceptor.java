@@ -12,11 +12,7 @@ public class LoginInterceptor {
 
 	private Logger logger = LoggerFactory.getLogger(getClass());
 
-	public LoginInterceptor() {
-		logger.info("here i am");
-	}
-
-	@Pointcut("execution(* com.datapine.security.CustomAuthenticationManager.authenticate(..))")
+	@Pointcut("execution(* com.datapine.service.LoginService.login(..))")
 	public void k() {
 	}
 
@@ -24,5 +20,6 @@ public class LoginInterceptor {
 	public void myadvice(JoinPoint jp) {
 		Object[] args = jp.getArgs();
 		logger.info("logging attempt made for " + args[0]);
+		System.out.println("logging attempt made for " + args[0]);
 	}
 }
